@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/8624324425.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amazon-assignment</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    #screen {
+        /* border: 1px solid black; */
+        height: 700px;
+        width: 100%;
+    }
+
+    #navbar {
+        /* border: 1px solid black; */
+        height: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: black;
+        color: white;
+    }
+
+    #logo-n-address {
+        /* border: 1px solid black; */
+        height: 60px;
+        width: 20%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    #logo {
+        /* border: 1px solid black; */
+        height: 60px;
+        width: 40%;
+        display: flex;
+    }
+
+    #logo-img {
+        height: 50px;
+        width: 90%;
+        padding-top: 10px;
+    }
+
+    #logo>span {
+        height: 40px;
+        padding-top: 18px;
+        font-weight: bold;
+        /* color: white; */
+    }
+
+    #address {
+        /* border: 1px solid black; */
+        height: 60px;
+        width: 55%;
+        display: flex;
+        justify-content: space-around
+    }
+
+    .fa-location-dot {
+        margin-top: 28px;
+    }
+
+    #address>div {
+        display: flex;
+        flex-direction: column;
+        padding-top: 12px;
+    }
+
+    #search {
+        /* border: 1px solid black; */
+        height: 45px;
+        width: 50%;
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+    }
+
+    #all {
+        border-right: 1px solid black;
+        width: 6%;
+        height: 43px;
+        padding-top: 10px;
+        padding-left: 2px;
+        background-color: #f3f3f3;
+        color: grey;
+    }
+
+    #search-select {
+        border: none;
+        outline: none;
+        background-color: #f3f3f3;
+        color: grey;
+    }
+
+    #search-input {
+        width: 85%;
+        border: none;
+        outline: none;
+    }
+
+    #search-icon {
+        background-color: #febd69;
+        width: 7%;
+    }
+
+    #icon {
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+
+    #cont-acc-order-cart {
+        /* border: 1px solid black; */
+        height: 60px;
+        width: 28%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #cont {
+        /* border: 1px solid black; */
+        height: 40px;
+        width: 15%;
+        margin-top: 8px;
+        padding-top: 10px;
+        display: flex;
+
+    }
+
+    #cont-strong {
+        margin-left: 5px;
+    }
+
+    #cont-select {
+        height: 20px;
+        width: 15px;
+        border: none;
+        outline: none;
+        background-color: black;
+        color: white;
+    }
+
+    #account {
+        /* border: 1px solid black; */
+        height: 40px;
+        width: 32%;
+        margin-top: 8px;
+        padding-left: 6px;
+    }
+
+    #account-select {
+        width: 15px;
+        border: none;
+        outline: none;
+        background-color: black;
+        color: white;
+    }
+
+    #order {
+        /* border: 1px solid black; */
+        height: 40px;
+        width: 20%;
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 4px;
+
+    }
+
+    #cart {
+        /* border: 1px solid black; */
+        height: 40px;
+        width: 20%;
+        margin-top: 8px;
+        display: flex;
+        padding: 4px;
+    }
+
+    #flag-img {
+        height: 12px;
+        width: 15px;
+        margin-top: 4px;
+    }
+
+    #cart-icon {
+        margin-top: 14px;
+    }
+    #cart-strong{
+        margin-top: 14px;
+    }
+</style>
+
+<body>
+    <div id="screen">
+        <div id="navbar">
+            <div id="logo-n-address">
+                <div id="logo">
+                    <img id="logo-img" src="https://logos-world.net/wp-content/uploads/2020/04/Amazon-Emblem.jpg" />
+                    <span>.in</span>
+                </div>
+                <div id="address">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <small>Hello</small>
+                        <strong>Select your address</strong>
+                    </div>
+                </div>
+            </div>
+            <div id="search">
+                <div id="all">
+                    All<select id="search-select"></select>
+                </div>
+                <input id="search-input" placeholder="Search Amazon.in" />
+                <div id="search-icon">
+                    <i id="icon" class="fa-solid fa-magnifying-glass fa-lg"></i>
+                </div>
+            </div>
+            <div id="cont-acc-order-cart">
+                <div id="cont">
+                    <img id="flag-img"
+                        src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png" />
+                    <strong id="cont-strong">EN</strong>
+                    <select id="cont-select"></select>
+                </div>
+                <div id="account">
+                    <small>Hello, sign in</small>
+                    <div id="account-div"><strong>Account & Lists</strong><select id="account-select"></select></div>
+                </div>
+                <div id="order">
+                    <small>Returns</small>
+                    <strong>& Orders</strong>
+                </div>
+                <div id="cart">
+                    <i id="cart-icon" class="fa-solid fa-cart-shopping fa-2xl"></i>
+                    <strong id="cart-strong">Cart</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
