@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resume-day6</title>
+    <style>
+        * {
+            margin: 0px;
+            box-sizing: border-box;
+            color: white;
+            
+        }
+
+        #screen {
+            /* border: 1px solid #000000; */
+            height: auto;
+            width: 100%;
+            background-color: rgb(184, 193, 180);
+        }
+
+        #heading {
+            text-align: center;
+            color: black;
+        }
+
+        #inner-cont {
+            /* border: 1px solid black; */
+            width: 96%;
+            height: 125vh;
+            margin-left: 2%;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #left {
+            /* border: 1px solid black; */
+            width: 33%;
+            height: 123vh;
+            background-color: rgb(112, 142, 101);
+        }
+
+        .small-cont-left-div {
+            /* border: 1px solid black; */
+            height: 260px;
+            width: 100%;
+        }
+
+        #profile {
+            height: 300px;
+            width: 100%;
+            text-align: center;
+        }
+        #tech{
+            height: 200px;
+            width: 100%; 
+        }
+
+        #skill {
+            height: 160px;
+            width: 100%;
+        }
+
+        #hobby {
+            height: 150px;
+            width: 100%;
+        }
+
+        #selfie-div {
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        .text-class {
+            word-spacing: 2px;
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .makeitleft {
+            margin-left: 20px;
+            letter-spacing: 2px;
+        }
+
+        #right {
+            border: 1px solid black;
+            width: 60%;
+            height: 123vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screen">
+        <h1 id="heading">Resume</h1>
+        <div id="inner-cont">
+            <div id="left">
+                <div id="profile" class="small-cont-left-div">
+                    <div id="selfie-div">
+                        <img src="/self-photo.jpeg" />
+                    </div>
+                    <h3 class="text-class">Rocky Joseph Gomes</h3>
+                    <p class="text-class">Student</p>
+                    <h3 class="text-class">&#9742 9819986433</h3>
+                    <h3 class="text-class">&#128231 rockygomes@rocketmail.com</h3>
+                </div>
+                <div id="tech" class="small-cont-left-div">
+                    <h3 class="makeitleft">Frontend technology:</h3>
+                    <ul>
+                        <li>React</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                    </ul>
+                    <h3 class="makeitleft">Backend technology:</h3>
+                    <ul>
+                        <li>Node.JS</li>
+                        <li>Express</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                <div id="skill" class="small-cont-left-div">
+                    <h3 class="makeitleft">Skill:</h3>
+                    <ul>
+                        <li>Team player</li>
+                        <li>Time Mangement</li>
+                        <li>Flexibility</li>
+                        <li>Problem solving</li>
+                        <li>Communication</li>
+                        <li>Creativity</li>
+                    </ul>
+                </div>
+                <div id="hobby" class="small-cont-left-div">
+                    <h3 class="makeitleft">Hobbies:</h3>
+                    <ul>
+                        <li>Video games</li>
+                        <li>Traveling</li>
+                        <li>Listening to music</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="right"></div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
