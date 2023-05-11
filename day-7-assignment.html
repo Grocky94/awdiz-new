@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Margin & padding & border </title>
+    <style>
+        .div-border-10percent {
+            border: 1px solid blue;
+            height: 100px;
+            width: 10%;
+            margin: 10px;
+        }
+
+        .inner-div-border-10percent {
+            border: 1px solid red;
+            height: 50px;
+            width: 50%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Styling with marging</h3>
+    <div class="div-border-10percent">
+        <div class="inner-div-border-10percent" style="margin: 0px 0px 0px 10px;">Child</div>
+    </div>
+    <p>applying marging to left by 4 parameters (0px 10px 0px 10px)</p>
+    <br />
+
+    <div class="div-border-10percent">
+        <div class="inner-div-border-10percent" style="margin: 10px 0px;">Child</div>
+    </div>
+    <p>applying marging by 2 parameters (10px 0px) first value: top-bottom , second value: left-right</p>
+    <br />
+
+    <div class="div-border-10percent">
+        <div class="inner-div-border-10percent" style="margin:-10px;">Child</div>
+    </div>
+    <p>applying marging by single negative value (-10px) </p>
+    <br />
+
+    <div class="div-border-10percent">
+        <div class="inner-div-border-10percent" style="margin-left: 100px;">Child</div>
+    </div>
+    <p>applying short hand property to element (Margin-left:100px) </p>
+    <br />
+    <div class="div-border-10percent">
+        <div class="inner-div-border-10percent" style="margin: auto;">Child</div>
+    </div>
+    <p>applying marging by single value (auto) value: top-bottom , </p>
+
+    <h3>Styling with border-radius</h3>
+    <div class="div-border-10percent" style="border-radius: 40px 0px 0px 0px;"></div>
+    <p> applying 4 values to border radius property (boder-radius: 40px 0px 0px 0px ). Value only given to top left </p>
+    <div class="div-border-10percent" style="border-radius: 0px 40px 0px 0px;"></div>
+    <p> applying 4 values to border radius property (boder-radius: 0px 40px 0px 0px ). Value only given to top right
+    </p>
+    <div class="div-border-10percent" style="border-radius: 0px 50px ;"></div>
+    <p> applying 2 values to border radius property (boder-radius: 0px 50px ). Second value applies to top-right and
+        bottom-left.
+        bottom-right </p>
+    <div class="div-border-10percent" style="border-radius: 100px 100px;"></div>
+    <p>applying 2 values to border radous property (border-radius: 100px 100px) . first value applies to top-left and
+        bottom -right. Second value applies to top-right and bottom-left.</p>
+    <div class="div-border-10percent" style="border-bottom-left-radius:50px 10px"></div>
+    <p> applying short hand property (border-bottom-left-radius:50px 10px) first value either length or percentage of
+        horizontal semi axis. second value either length or percentage of vertical semi axis</p>
+    <div class="div-border-10percent" style="border-radius: 10px 15px 0px 0px / 20px 30px 0px 0px;"></div>
+    <p>applying 4 values to border radius property with forward slash '/ '(border-radius: 10px 15px 0px 0px / 20px 30px
+        0px 0px;). the numbers in front of the slash represent the horizontal border-radius values, while the values
+        after the slash represent the vertical border-radius values.</p>
+
+    <h3>Styling with Padding</h3>
+    <div class="div-border-10percent" style="padding:10px 0px 0px 10px;">
+        <div class="inner-div-border-10percent">Child</div>
+    </div>
+    <p>applying 4 values to padding (padding:10px 0px 0px 10px) first value applies to top and forth value applies to left
+        within the parent body.
+    </p>
+    <div class="div-border-10percent" style="padding:10px 20px 30px 10px;">
+        <div class="inner-div-border-10percent">Child</div>
+    </div>
+    <p>applying 4 values to padding (padding:10px 20px 30px 10px) first value applies to top, second value to right,third
+        to bottom and forth value applies to left. which show within the parent body. 
+    </p>
+    <div class="div-border-10percent" style="padding-bottom: 60px;">
+        <div class="inner-div-border-10percent" >Child</div>
+    </div>
+    <p> applying short hand property (padding-bottom: 60px)</p>
+    <div class="div-border-10percent" style="padding: 0px 20px 20px ;">
+        <div class="inner-div-border-10percent">Child</div>
+    </div>
+    <p>applying 3 values to padding (padding: 0px 20px 20px ) first applies to top, second to right and left and third to bottom within parent body as shown</p>
+
+</body>
+
+</html>
