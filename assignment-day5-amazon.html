@@ -77,7 +77,6 @@
         flex-direction: column;
         padding-top: 12px;
     }
-
     #search {
         /* border: 1px solid black; */
         height: 45px;
@@ -87,7 +86,6 @@
         justify-content: space-between;
         background-color: white;
     }
-
     #all {
         border-right: 1px solid black;
         width: 6%;
@@ -97,30 +95,25 @@
         background-color: #f3f3f3;
         color: grey;
     }
-
     #search-select {
         border: none;
         outline: none;
         background-color: #f3f3f3;
         color: grey;
     }
-
     #search-input {
         width: 85%;
         border: none;
         outline: none;
     }
-
     #search-icon {
         background-color: #febd69;
         width: 7%;
     }
-
     #icon {
         margin-top: 20px;
         margin-left: 15px;
     }
-
     #cont-acc-order-cart {
         /* border: 1px solid black; */
         height: 60px;
@@ -128,7 +121,6 @@
         display: flex;
         justify-content: space-around;
     }
-
     #cont {
         /* border: 1px solid black; */
         height: 40px;
@@ -138,11 +130,9 @@
         display: flex;
 
     }
-
     #cont-strong {
         margin-left: 5px;
     }
-
     #cont-select {
         height: 20px;
         width: 15px;
@@ -151,7 +141,6 @@
         background-color: black;
         color: white;
     }
-
     #account {
         /* border: 1px solid black; */
         height: 40px;
@@ -159,7 +148,6 @@
         margin-top: 8px;
         padding-left: 6px;
     }
-
     #account-select {
         width: 15px;
         border: none;
@@ -167,7 +155,6 @@
         background-color: black;
         color: white;
     }
-
     #order {
         /* border: 1px solid black; */
         height: 40px;
@@ -178,7 +165,6 @@
         padding: 4px;
 
     }
-
     #cart {
         /* border: 1px solid black; */
         height: 40px;
@@ -187,18 +173,59 @@
         display: flex;
         padding: 4px;
     }
-
     #flag-img {
         height: 12px;
         width: 15px;
         margin-top: 4px;
     }
-
     #cart-icon {
         margin-top: 14px;
     }
-    #cart-strong{
+    #cart-strong {
         margin-top: 14px;
+    }
+    #second-nav-bar {
+        /* border: 1px solid black; */
+        height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(35, 47, 62);
+    }
+    #second-nav-bar-left {
+        /* border: 1px solid black; */
+        width: 73%;
+        height: 40px;
+        display: flex;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .nav-bar-list {
+        height: 38px;
+        padding: 6px;
+        text-decoration: none;
+        color: white;
+    }
+    .nav-bar-list:hover {
+        border: 1px solid white;
+
+    }
+    .nav-bar-list>i {
+        margin-top: 10px;
+    }
+    .nav-bar-list>select {
+        width: 15px;
+        height: 15px;
+        border: none;
+        outline: none;
+        background-color: rgb(35, 47, 62);
+        color: white;
+    }
+    #second-nav-bar-right {
+        /* border: 1px solid black; */
+        height: 40px;
+        width: 25%;
     }
 </style>
 
@@ -246,6 +273,25 @@
                     <i id="cart-icon" class="fa-solid fa-cart-shopping fa-2xl"></i>
                     <strong id="cart-strong">Cart</strong>
                 </div>
+            </div>
+        </div>
+        <div id="second-nav-bar">
+            <div id="second-nav-bar-left">
+                <a class="nav-bar-list" href="#"><i class="fa-solid fa-bars fa-xl"></i> ALL</a>
+                <a class="nav-bar-list" href="#">Amazon miniTV</a>
+                <a class="nav-bar-list" href="#">Sell</a>
+                <a class="nav-bar-list" href="#">Best Seller's</a>
+                <a class="nav-bar-list" href="#">Today's Deals</a>
+                <a class="nav-bar-list" href="#">Mobiles</a>
+                <a class="nav-bar-list" href="#">Customer Service</a>
+                <a class="nav-bar-list" href="#">Electronics</a>
+                <a class="nav-bar-list" href="#">New Releases</a>
+                <a class="nav-bar-list" href="#">Prime<select></select></a>
+                <a class="nav-bar-list" href="#">Home & Kitchen</a>
+                <a class="nav-bar-list" href="#">Amazon Pay</a>
+            </div>
+            <div id="second-nav-bar-right">
+                <img src="https://m.media-amazon.com/images/G/31/AmazonVideo/2021/X-site/SingleTitle/Air/400x39-SWM_NP._CB589429826_.jpg"/>
             </div>
         </div>
 
