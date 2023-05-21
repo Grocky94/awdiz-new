@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/8624324425.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day5</title>
+    <style>
+        #screen {
+            border: 1px solid black;
+            width: 100%;
+
+        }
+
+        #navbar {
+            border: 1px solid black;
+            height: 75px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #logo {
+            border: 1px solid black;
+            width: 10%;
+        }
+
+        #navi {
+            border: 1px solid black;
+            width: 35%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #search {
+            border: 1px solid black;
+            width: 35%;
+            display: flex;
+        }
+
+        #profile {
+            border: 1px solid black;
+            width: 15%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #filter-header {
+            border: 1px solid black;
+
+            width: 100%;
+        }
+
+        #inner-filter {
+            height: 40px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+        }
+
+        #select-div {
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            width: 20%;
+            margin-left: 16%;
+            align-items: center;
+        }
+
+        #select-div>select {
+            height: 30px;
+            display: inline;
+            border-radius: 10px;
+        }
+
+        #sort {
+            border: 1px solid black;
+            height: 30px;
+            width: 20%;
+            display: flex;
+            margin-left: auto;
+            margin-right: 0;
+            align-items: center;
+        }
+
+        #sort>select {
+            height: 15px;
+            margin-left: 10px;
+            border: none;
+            outline: none;
+        }
+
+        #inner-body-align {
+            border: 1px solid black;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #inner-body-align-for-left {
+            border: 1px solid black;
+            width: 20%;
+
+        }
+
+        #inner-body-align-for-left>div:nth-child(1)>h4:nth-child(1) {
+            height: 40px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #inner-body-align-for-left>div:nth-child(1)>input:nth-child(5),
+        label:nth-child(6) {
+            margin-bottom: 25px;
+        }
+
+        #search-catalog {
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        #search-catalog>i {
+            margin-left: auto;
+            margin-right: 5%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(2)>input:nth-child(2),
+        label:nth-child(3) {
+            margin-top: 25px;
+        }
+
+        #inner-body-align-for-left>div:nth-child(2)>input:nth-child(23),
+        label:nth-child(24) {
+            margin-bottom: 25px;
+        }
+
+        #inner-body-align-for-right {
+            border: 1px solid black;
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product-showing-div-slide {
+            border: 1px solid black;
+            height: 330px;
+            width: 20%;
+            margin-top: 2%;
+        }
+
+        .product-img {
+            border: 1px solid black;
+            height: 222px;
+            width: 100%;
+
+        }
+
+        .product-img>img {
+            margin-left: 10%;
+            object-fit: cover;
+            width: 79%;
+        }
+
+        .product-showing-div-slide>strong:nth-child(4)>del {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screen">
+        <div id="navbar">
+            <div id="logo"></div>
+            <div id="navi">
+                <div>MEN</div>
+                <div>WOMEN</div>
+                <div>KIDS</div>
+                <div>HOME</div>
+                <div>BEAUTY</div>
+                <div>STUDIO</div>
+            </div>
+            <div id="search">
+                <div><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div><input style="border: none; outline: none;" /></div>
+            </div>
+            <div id="profile">
+                <div id="pp">
+                    <div><i class="fa-solid fa-user"></i></div>
+                    <div> Profile</div>
+                </div>
+                <div id="wish">
+                    <div><i class="fa-solid fa-bag-shopping"></i></div>
+                    <div>wishlist</div>
+                </div>
+                <div id="cart">
+                    <div><i class="fa-solid fa-cart-shopping"></i></div>
+                    <div>cart</div>
+                </div>
+
+            </div>
+        </div>
+        <div id="body">
+            <div id="filter-header">
+                <p>Home / Clothing / <strong>Men T-Shirts</strong></p>
+                <p><strong>Men T-Shirts</strong>- 97247 items</p>
+                <div id="inner-filter">
+                    <strong>FILTERS</strong>
+                    <div id="select-div">
+                        <select>
+                            <option>Bundles</option>
+                        </select>
+                        <select>
+                            <option>Country of origin</option>
+                        </select>
+                        <select>
+                            <option>Size</option>
+                        </select>
+                    </div>
+                    <div id="sort">
+                        <p>Sort By:<strong>Recommended</strong></p>
+                        <select></select>
+                    </div>
+                </div>
+            </div>
+            <div id="inner-body-align">
+                <div id="inner-body-align-for-left">
+                    <div>
+                        <h4>CATEGORIES</h4>
+                        <input type="checkbox" />
+                        <label>Tshirts(96161)</label><br />
+                        <input type="checkbox" />
+                        <label>Lounge Tshirts(1063)</label><br />
+                    </div>
+                    <div>
+                        <div id="search-catalog">
+                            <h4>BRAND</h4>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <input type="checkbox" />
+                        <label>Roadster(3994)</label><br />
+                        <input type="checkbox" />
+                        <label>Friskers(2569)</label><br />
+                        <input type="checkbox" />
+                        <label>U.S. Polo Assn.(1748)</label><br />
+                        <input type="checkbox" />
+                        <label>Tommy Hilfiger(1706)</label><br />
+                        <input type="checkbox" />
+                        <label>Jack & Jones(1614)</label><br />
+                        <input type="checkbox" />
+                        <label>HRX by Hrithik Roshan(1546)</label><br />
+                        <input type="checkbox" />
+                        <label>Puma(1514)</label><br />
+                        <input type="checkbox" />
+                        <label>Being Human(1288)</label><br />
+                    </div>
+                    <div>
+                        <h4>PRICE</h4>
+                        <input type="checkbox" />
+                        <label>Rs. 149 to Rs. 4062(96516)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 4062 to Rs. 7975(764)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 7975 to Rs. 11888(62)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 11888 to Rs. 15801(12)</label><br />
+                    </div>
+                </div>
+                <div id="inner-body-align-for-right">
+                    <div class="product-showing-div-slide">
+                        <div class="product-img">
+                            <img src="" />
+                        </div>
+                        <strong>PUMA</strong>
+                        <p>Men Printed Football T-shirt</p>
+                        <strong>Rs.3299<del>Rs.5499</del></strong><span>(40% OFF)</span>
+                        <p></p>
+                    </div>
+                    <div class="product-showing-div-slide">
+                        <div class="product-img">
+                            <img src="" />
+                        </div>
+                        <strong>PUMA</strong>
+                        <p>Men Printed Football T-shirt</p>
+                        <strong>Rs.3299<del>Rs.5499</del></strong><span>(40% OFF)</span>
+                        <p></p>
+                    </div>
+                    <div class="product-showing-div-slide">
+                        <div class="product-img">
+                            <img src="" />
+                        </div>
+                        <strong>PUMA</strong>
+                        <p>Men Printed Football T-shirt</p>
+                        <strong>Rs.3299<del>Rs.5499</del></strong><span>(40% OFF)</span>
+                        <p></p>
+                    </div>
+                    <div class="product-showing-div-slide">
+                        <div class="product-img">
+                            <img src="" />
+                        </div>
+                        <strong>PUMA</strong>
+                        <p>Men Printed Football T-shirt</p>
+                        <strong>Rs.3299<del>Rs.5499</del></strong><span>(40% OFF)</span>
+                        <p></p>
+                    </div>
+                    <div class="product-showing-div-slide">
+                        <div class="product-img">
+                            <img src="" />
+                        </div>
+                        <strong>PUMA</strong>
+                        <p>Men Printed Football T-shirt</p>
+                        <strong>Rs.3299<del>Rs.5499</del></strong><span>(40% OFF)</span>
+                        <p></p>
+                    </div>
+                    <div class="product-showing-div-slide">
+                        <div class="product-img">
+                            <img src="" />
+                        </div>
+                        <strong>PUMA</strong>
+                        <p>Men Printed Football T-shirt</p>
+                        <strong>Rs.3299<del>Rs.5499</del></strong><span>(40% OFF)</span>
+                        <p></p>
+                    </div>
+                    <div class="product-showing-div-slide">
+                        <div class="product-img">
+                            <img src="" />
+                        </div>
+                        <strong>PUMA</strong>
+                        <p>Men Printed Football T-shirt</p>
+                        <strong>Rs.3299<del>Rs.5499</del></strong><span>(40% OFF)</span>
+                        <p></p>
+                    </div>
+                    <div class="product-showing-div-slide">
+                        <div class="product-img">
+                            <img src="" />
+                        </div>
+                        <strong>PUMA</strong>
+                        <p>Men Printed Football T-shirt</p>
+                        <strong>Rs.3299<del>Rs.5499</del></strong><span>(40% OFF)</span>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // var img = document.getElementsByClassName("product-img");
+    const imgs = document.querySelectorAll('.product-img img');
+
+    var slides = [
+        "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18982090/2022/7/19/e618a91f-c4a3-48ea-9ea0-0d105025b5de1658232227623-Manchester-City-FC--Home-Jersey-Replica-2891658232227240-1.jpg",
+        "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18982090/2022/7/19/ec5bc666-b359-4396-b605-2860ac3ce0441658232227608-Manchester-City-FC--Home-Jersey-Replica-2891658232227240-3.jpg",
+        "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18982090/2022/7/19/0261d6cc-32f5-4666-963f-6add607858211658232227590-Manchester-City-FC--Home-Jersey-Replica-2891658232227240-5.jpg",
+        "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/18982090/2022/7/19/408764e5-facf-4688-bbcd-6b86ea96ad1a1658232227615-Manchester-City-FC--Home-Jersey-Replica-2891658232227240-2.jpg"
+    ];
+
+    // var Start = 0;
+
+    var current = 0;
+    function slider() {
+        if (current < slides.length) {
+            current++;
+        }
+        else {
+            current = 1;
+        }
+
+        for (const img of imgs) {
+            img.src = slides[current - 1];
+        }
+    }
+    setInterval(slider, 2000);
+</script>
+
+</html>
