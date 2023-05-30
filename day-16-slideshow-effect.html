@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideshow</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        #advertising {
+            border: 1px solid black;
+            height: 50vh;
+            width: 100%;
+            position: relative;
+        }
+
+        .showcase {
+            display: none;
+            border: 1px solid black;
+            height: 50vh;
+            width: 100%;
+        }
+        .showcase>img{
+            height:100%;
+            width: 100%;
+        }
+
+        .dot {
+            border: 1px solid black;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #717171;
+            cursor: pointer;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .image {
+            animation-name: image;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes image {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="advertising">
+        <!-- for images  -->
+        <div class="showcase image">
+            <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/5/25/0c3290bf-763c-45d8-8cc8-19f04887c6921685033723850-Curtain-raiser_DK-banner.jpg"
+                style="width:100%">
+        </div>
+        <div class="showcase image">
+            <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/84b6a214-9eb3-49eb-9f9d-72cec56ec5d71659019908592-Indian-Wear_DK--1-.jpg"
+                style="width:100%">
+        </div>
+        <div class="showcase image">
+            <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/6107d28b-2bcb-44e6-9743-655b54550b8f1659020199598-Workwear_Desk--1-.jpg"
+                style="width:100%">
+        </div>
+        <div class="showcase image">
+            <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/0174e4d7-448c-4746-8572-69461ad5be101659020268081-Tops---Tees_Desk.jpg"
+                style="width:100%">
+        </div>
+        <div class="showcase image">
+            <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/b656a7f4-4688-4997-bb7c-54b78793981e1658752386588-Western-Wear_Desk.jpg"
+                style="width:100%">
+        </div>
+        <div class="showcase image">
+            <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/179e278f-77ee-44c2-bf39-9f00b0cd08e01658752429301-Handbags_Desk.jpg"
+                style="width:100%">
+        </div>
+        <div class="showcase image">
+            <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/25/9be788ff-39a4-4214-99d0-fc97505aae5a1658752545685-USPA_Desk_Banner.jpg"
+                style="width:100%">
+        </div>
+        <div class="showcase image">
+            <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/31/4031994d-9092-4aa7-aea1-f52f2ae5194f1654006594976-Activewear_DK.jpg"
+                style="width:100%">
+        </div>
+        <div class="showcase image">
+            <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/6/27/53b4daed-cd2c-4111-86c5-14f737eceb351656325318973-Handbags_Desk.jpg"
+                style="width:100%">
+        </div>
+    </div>
+    <br />
+    <div style="text-align:center">
+        <span class="dot" onclick="displayAdd(1)"></span>
+        <span class="dot" onclick="displayAdd(2)"></span>
+        <span class="dot" onclick="displayAdd(3)"></span>
+        <span class="dot" onclick="displayAdd(4)"></span>
+        <span class="dot" onclick="displayAdd(5)"></span>
+        <span class="dot" onclick="displayAdd(6)"></span>
+        <span class="dot" onclick="displayAdd(7)"></span>
+        <span class="dot" onclick="displayAdd(8)"></span>
+        <span class="dot" onclick="displayAdd(9)"></span>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function displayAdd(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("showcase image");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 };
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+
+</html>
