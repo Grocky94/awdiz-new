@@ -44,7 +44,7 @@
 
         }
 
-        #logo>img {
+        #logo>a>img {
             height: 100%;
             width: 100%;
             padding: 5px;
@@ -126,6 +126,11 @@
             align-items: center;
         }
 
+        #rightIcon>div:nth-child(1)>p:nth-child(2)>a {
+            text-decoration: none;
+            color: black;
+        }
+
         .icon {
             height: 60px;
             width: 25%;
@@ -136,6 +141,11 @@
 
         .icon>i {
             margin-top: 10px;
+        }
+
+        #rightIcon>div:nth-child(3)>p:nth-child(2)>a {
+            text-decoration: none;
+            color: black;
         }
 
         #body {
@@ -349,16 +359,22 @@
         }
 
         .wishList {
-            border: 1px solid rgb(212, 97, 97);
-            color: rgb(212, 97, 97);
+            border: 1px solid rgb(63, 63, 118);
+            background-color: rgb(63, 63, 118);
+            color: white;
             border-radius: 10px;
             height: 25px;
-            width: 50%;
+            width: 80%;
             margin: auto;
             text-align: center;
             margin-top: 3px;
             display: none;
             align-items: center;
+            padding-top: 1%;
+        }
+        .wishList >a{
+            text-decoration: none;
+            color: white;
         }
     </style>
 </head>
@@ -368,7 +384,9 @@
         <div id="navBar">
             <div id="leftInnerDiv">
                 <div id="logo">
-                    <img src="https://images.indianexpress.com/2021/01/myntra.png"></img>
+                    <a href="day-16-assignment.html">
+                        <img src="https://images.indianexpress.com/2021/01/myntra.png"></img>
+                        </a>
                 </div>
                 <div id="cat">
                     <div class="catList">MEN</div>
@@ -387,7 +405,7 @@
                 <div id="rightIcon">
                     <div class="icon">
                         <i class="fa-regular fa-user"></i>
-                        <p>Profile</p>
+                        <p><a href="day-18-assign-myntra-profile.html">Profile</a></p>
                     </div>
                     <div class="icon">
                         <i class="fa-regular fa-heart"></i>
@@ -395,7 +413,7 @@
                     </div>
                     <div class="icon">
                         <i class="fa-solid fa-bag-shopping"></i>
-                        <p>Bag</p>
+                    <p><a href="day-18-assign-myntra-cart.html">Bag</a></p>
                     </div>
                 </div>
             </div>
@@ -542,11 +560,11 @@
                         <div class="product-rating-within-product-img">4.2 <i class="fa-solid fa-star"></i> |730 </div>
                         <div class="product-img">
                             <img
-                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8841173/2019/3/19/e73991be-bd0c-4dd3-8390-bb9c460d02311552986669941-Roadster-Men-Tshirts-2621552986668325-1.jpg" />
+                                src="https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2475811/2018/4/20/11524206887911-Roadster-Men-Tshirts-9291524206887825-5.jpg" />
                         </div>
-                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <div class="wishList"><a href="day-13-assignment-roadster-tshrist.html">Wishlist </a><i class="fa-regular fa-heart"></i></div>
                         <strong>Roadster</strong>
-                        <p>Allover Printed Round Neck P...</p>
+                        <p>Men White Printed Cotton...</p>
                         <strong>Rs.249</strong><del>Rs.999</del><span>(75% OFF)</span>
                     </div>
                     <!-- fifth product  -->
@@ -749,9 +767,9 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', onload)
-    
-    
-    function onload(){
+
+
+    function onload() {
         let productDivs = document.querySelectorAll('.product-showing-div-slide');
 
         productDivs.forEach((productDiv) => {

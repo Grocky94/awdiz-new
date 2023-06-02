@@ -117,34 +117,48 @@
 
     <script>
         let slideIndex = 1;
+        let timer;
+
         showSlides(slideIndex);
+        startTimer();
 
         function displayAdd(n) {
+            clearTimeout(timer);
             showSlides(slideIndex = n);
+            startTimer();
         }
 
         function showSlides(n) {
             let i;
-            var current = 0;
             let slides = document.getElementsByClassName("showcase image");
             let dots = document.getElementsByClassName("dot");
-            if (n < 1) { slideIndex = slides.length };
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            slideIndex++
-            if (n > slides.length) { slideIndex = 1 };
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
 
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
-
-            setInterval(showSlides, 2000);
         }
 
+        function startTimer() {
+            timer = setTimeout(function () {
+                showSlides(slideIndex += 1);
+                startTimer();
+            }, 2000); // Change this value to adjust the delay between automatic slides
+        }
     </script>
+
 </body>
 
 </html>
