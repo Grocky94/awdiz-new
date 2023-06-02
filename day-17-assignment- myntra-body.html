@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/8624324425.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #screen {
+            /* border: 1px solid black; */
+            width: 100%;
+
+        }
+
+        #navBar {
+            height: 100px;
+            width: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+
+        #leftInnerDiv {
+            height: 100px;
+            width: 50%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            height: 80px;
+            width: 15%;
+            /* border: 1px solid black; */
+            padding: 10px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #logo>img {
+            height: 100%;
+            width: 100%;
+            padding: 5px;
+            /* border: 1px solid black; */
+
+        }
+
+        #cat {
+            height: 80px;
+            width: 80%;
+            /* border: 1px solid black; */
+            padding: 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: stretch;
+        }
+
+        .catList {
+            height: 60px;
+            width: 80px;
+            /* border: 1px solid black; */
+            padding: 5px;
+            font-size: small;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: center;
+
+
+        }
+
+        #rightInnerDiv {
+            height: 100px;
+            width: 55%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #rightInput {
+            height: 60px;
+            width: 60%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
+        #rightInput>div {
+            height: 20px;
+            width: 100%;
+            /* border: 1px solid black; */
+            background-color: #f5f5f6;
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+
+        }
+
+        #rightInput>div>input {
+            width: 90%;
+            border: none;
+            background-color: #f5f5f6;
+        }
+
+
+        #rightIcon {
+            height: 60px;
+            width: 35%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .icon {
+            height: 60px;
+            width: 25%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            text-align: center;
+        }
+
+        .icon>i {
+            margin-top: 10px;
+        }
+
+        #body {
+            /* border: 1px solid black; */
+            /* height: 400vh; */
+            width: 100%;
+            margin-top: 91px;
+        }
+
+        #filter-header {
+            /* border: 1px solid black; */
+            width: 100%;
+        }
+
+        #inner-filter {
+            height: 40px;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #select-div {
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-between;
+            width: 20%;
+            margin-left: 16%;
+            align-items: center;
+        }
+
+        #select-div>select {
+            height: 30px;
+            display: inline;
+            border-radius: 10px;
+            border: none;
+        }
+
+        #select-div>select:hover {
+            border-radius: 10px;
+            border: 1px solid rgb(231, 229, 229);
+            background-color: rgb(231, 229, 229);
+        }
+
+        #sort {
+            border: 1px solid black;
+            height: 30px;
+            width: 20%;
+            display: flex;
+            margin-left: auto;
+            margin-right: 0;
+            align-items: center;
+        }
+
+        #sort>select {
+            height: 15px;
+            margin-left: 10px;
+            border: none;
+            outline: none;
+        }
+
+        #inner-body-align {
+            /* border: 1px solid black; */
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #inner-body-align-for-left {
+            border: 1px solid rgb(227, 226, 226);
+            width: 16%;
+
+        }
+
+        #inner-body-align-for-left>div:nth-child(1)>h4:nth-child(1) {
+            height: 40px;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+
+        }
+
+        #inner-body-align-for-left>div:nth-child(1)>input:nth-child(5),
+        label:nth-child(6) {
+            margin-bottom: 25px;
+        }
+
+        #search-catalog {
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        #search-catalog>i {
+            margin-left: auto;
+            margin-right: 5%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(2)>input:nth-child(2),
+        label:nth-child(3) {
+            margin-top: 25px;
+        }
+
+        #inner-body-align-for-left>div:nth-child(2)>input:nth-child(23),
+        label:nth-child(24) {
+            margin-bottom: 25px;
+        }
+
+        .color-showing-span {
+            /* border: 1px solid black; */
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+
+        }
+
+        #inner-body-align-for-left>div:nth-child(4)>div:nth-child(1) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #inner-body-align-for-left>div:nth-child(4)>p:nth-child(30) {
+            color: red;
+            margin-left: 15%;
+        }
+
+        #inner-body-align-for-left>div:nth-child(5)>span {
+            display: inline-block;
+            /* border: 1px solid black; */
+            border-radius: 50%;
+        }
+
+        #inner-body-align-for-right {
+            /* border: 1px solid black; */
+            width: 82%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-left: 2%;
+            margin-right: auto;
+        }
+
+        .product-showing-div-slide {
+            /* border: 1px solid black; */
+            height: 400px;
+            width: 18%;
+            margin-top: 2%;
+        }
+
+
+        .product-showing-div-slide>strong,
+        p {
+
+            margin-left: 10px;
+            line-height: 2px;
+        }
+
+        .product-showing-div-slide>span:nth-child(7) {
+            color: orange;
+        }
+
+        .product-showing-div-slide>del:nth-child(6) {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .product-img {
+            /* border: 1px solid black; */
+            height: 310px;
+            width: 100%;
+
+        }
+
+        .orange {
+            color: orange;
+            margin-left: 5px;
+        }
+
+        .product-rating-within-product-img {
+            /* border: 1px solid black; */
+            height: 30px;
+            width: auto;
+            background-color: white;
+            position: absolute;
+            margin-top: 18%;
+            margin-left: 0.5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-rating-within-product-img>i {
+            font-size: 9px;
+            margin-left: 2%;
+            color: green;
+
+        }
+
+        .product-img>img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .product-showing-div-slide>strong:nth-child(4)>del {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .product-showing-div-slide:hover {
+            transform: scale(1.1);
+        }
+
+        .wishList {
+            border: 1px solid rgb(212, 97, 97);
+            color: rgb(212, 97, 97);
+            border-radius: 10px;
+            height: 25px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+            margin-top: 3px;
+            display: none;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="screen">
+        <div id="navBar">
+            <div id="leftInnerDiv">
+                <div id="logo">
+                    <img src="https://images.indianexpress.com/2021/01/myntra.png"></img>
+                </div>
+                <div id="cat">
+                    <div class="catList">MEN</div>
+                    <div class="catList">WOMEN</div>
+                    <div class="catList">KIDS</div>
+                    <div class="catList">HOME & LIVING</div>
+                    <div class="catList">BEAUTY</div>
+                    <div class="catList">STUDIO<sub>NEW</sub></div>
+                </div>
+            </div>
+            <div id="rightInnerDiv">
+                <div id="rightInput">
+                    <div><i class="fa-solid fa-magnifying-glass"></i><input
+                            placeholder="Search for product, brands and more" /></div>
+                </div>
+                <div id="rightIcon">
+                    <div class="icon">
+                        <i class="fa-regular fa-user"></i>
+                        <p>Profile</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                        <p>Wishlist</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <p>Bag</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="body">
+            <div id="filter-header">
+                <p>Home / Clothing / <strong>Men T-Shirts</strong></p>
+                <p><strong>Men T-Shirts</strong>- 97247 items</p>
+                <div id="inner-filter">
+                    <strong>FILTERS</strong>
+                    <div id="select-div">
+                        <select>
+                            <option>Bundles</option>
+                        </select>
+                        <select>
+                            <option>Country of origin</option>
+                        </select>
+                        <select>
+                            <option>Size</option>
+                        </select>
+                    </div>
+                    <div id="sort">
+                        <p>Sort By:<strong>Recommended</strong></p>
+                        <select></select>
+                    </div>
+                </div>
+            </div>
+            <div id="inner-body-align">
+                <!-- for left side  -->
+                <div id="inner-body-align-for-left">
+                    <!-- first division left side  -->
+                    <div>
+                        <h4>CATEGORIES</h4>
+                        <input type="checkbox" />
+                        <label>Tshirts(96161)</label><br />
+                        <input type="checkbox" />
+                        <label>Lounge Tshirts(1063)</label><br />
+                    </div>
+                    <!-- second division left side  -->
+                    <div>
+                        <div id="search-catalog">
+                            <h4>BRAND</h4>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <input type="checkbox" />
+                        <label>Roadster(3994)</label><br />
+                        <input type="checkbox" />
+                        <label>Friskers(2569)</label><br />
+                        <input type="checkbox" />
+                        <label>U.S. Polo Assn.(1748)</label><br />
+                        <input type="checkbox" />
+                        <label>Tommy Hilfiger(1706)</label><br />
+                        <input type="checkbox" />
+                        <label>Jack & Jones(1614)</label><br />
+                        <input type="checkbox" />
+                        <label>HRX by Hrithik Roshan(1546)</label><br />
+                        <input type="checkbox" />
+                        <label>Puma(1514)</label><br />
+                        <input type="checkbox" />
+                        <label>Being Human(1288)</label><br />
+                    </div>
+                    <!-- third division left side  -->
+                    <div>
+                        <h4>PRICE</h4>
+                        <input type="checkbox" />
+                        <label>Rs. 149 to Rs. 4062(96516)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 4062 to Rs. 7975(764)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 7975 to Rs. 11888(62)</label><br />
+                        <input type="checkbox" />
+                        <label>Rs. 11888 to Rs. 15801(12)</label><br />
+                    </div>
+                    <!-- fourth division left side  -->
+                    <div>
+                        <div id="search-catalog">
+                            <h4>COLOR</h4>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:black;"></span>
+                        <label>Black (14960)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:blue;"></span>
+                        <label>Blue (13021)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span"
+                            style="background-color:white; border: 1px solid black;"></span>
+                        <label>White (12543)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:rgb(60, 60, 149);"></span>
+                        <label>Navy Blue (10105)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:green;"></span>
+                        <label>Green (6853)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:grey;"></span>
+                        <label>Grey (6013)</label><br />
+                        <input type="checkbox" />
+                        <span class="color-showing-span" style="background-color:red;"></span>
+                        <label>Red (5402)</label><br />
+                        <p>+39 more</p>
+                    </div>
+                </div>
+                <div id="inner-body-align-for-right">
+                    <!-- first product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.4 <i class="fa-solid fa-star"></i> |7 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21086738/2022/12/14/12e313ff-4513-4289-b061-99aa4db317ea1670993138745-Calvin-Klein-Jeans-Men-Tshirts-6991670993138251-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Calvin Klein Jeans</strong>
+                        <p>Men Pure Cotton T-shirt</p>
+                        <strong>Rs.1429</strong><del>Rs.2599</del><span>(45% OFF)</span>
+                    </div>
+                    <!-- second product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.3 <i class="fa-solid fa-star"></i> |59 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22463488/2023/3/22/2d0c8e24-b058-450a-8e19-f4f248e07f531679449104069RegularFitRound-neckT-shirt1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>H&M</strong>
+                        <p>Regular Fit Round-Neck T-shirt</p>
+                        <strong>Rs.499</strong><del>Rs.499</del><span>(10%OFF)</span>
+                    </div>
+                    <!-- third product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.4 <i class="fa-solid fa-star"></i> |184 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16769172/2022/2/14/ea48afd9-fc65-45ca-abf4-d53c644096c31644834247714-U-S-Polo-Assn-Denim-Co-Men-White-Brand-Logo-Printed-Polo-Col-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>U.S.Polo Assn.Denim Co.</strong>
+                        <p>Men Brand Logo Printed Polo...</p>
+                        <strong>Rs.1499</strong>
+                    </div>
+                    <!-- fourth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.2 <i class="fa-solid fa-star"></i> |730 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8841173/2019/3/19/e73991be-bd0c-4dd3-8390-bb9c460d02311552986669941-Roadster-Men-Tshirts-2621552986668325-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Roadster</strong>
+                        <p>Allover Printed Round Neck P...</p>
+                        <strong>Rs.249</strong><del>Rs.999</del><span>(75% OFF)</span>
+                    </div>
+                    <!-- fifth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.3 <i class="fa-solid fa-star"></i> |17.5k
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2314372/2018/6/19/29e8ddfd-6f5f-43fd-8b71-dfa8ac6cef681529385860869-HRX-by-Hrithik-Roshan-Men-Charcoal-Grey-Slim-Advanced-Rapid--1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>HRX by Hrithik Roshan</strong>
+                        <p>Slim Rapid Dry Raglan T-shirt</p>
+                        <strong>Rs.269</strong><del>Rs.899</del><span>(70%OFF)</span>
+                    </div>
+                    <!-- sixth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.5 <i class="fa-solid fa-star"></i> |305 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22763126/2023/5/5/d7f27349-a195-4d1d-932c-73f42ff095c41683288884828-Peter-England-Casuals-Men-Striped-Slim-Fit-T-shirt-512168328-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Peter England Casuals</strong>
+                        <p>Men Striped Slim Fit T-shirt</p>
+                        <strong>Rs.699</strong><del>Rs.999</del><span class="orange">(30% OFF)</span>
+                    </div>
+                    <!-- seventh product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.5 <i class="fa-solid fa-star"></i> |305 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21474638/2023/1/24/3a74185f-276d-48df-8e73-4270bdabbfe31674562975045-Louis-Philippe-Sport-Men-Tshirts-4131674562974519-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Louis Philippe Sport</strong>
+                        <p>Men Polo Collar Slim Fit T-shirt</p>
+                        <strong>Rs.884</strong><del>Rs.1499</del><span>(41% OFF)</span>
+                    </div>
+                    <!-- eighth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.3 <i class="fa-solid fa-star"></i> |3.3k </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8692191/2019/6/15/d1b3293b-8f88-4f29-9253-bd533d31d38d1560597433096-HRX-by-Hrithik-Roshan-Men-Tshirts-1151560597431590-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>HRX by Hrithik Roshan</strong>
+                        <p>Training Rapid Dry</p>
+                        <strong>Rs.209</strong><del>Rs.699</del><span>(70%OFF)</span>
+                    </div>
+                    <!-- ninth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.1 <i class="fa-solid fa-star"></i> |6.8k </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2475892/2018/4/3/11522732991435-Roadster-Men-Black-Solid-Round-Neck-T-shirt-1531522732991218-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Roadster</strong>
+                        <p>Solid Round Neck T-shirt</p>
+                        <strong>Rs.239</strong><del>Rs.799</del><span>(70% OFF)</span>
+                    </div>
+                    <!-- tenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.5 <i class="fa-solid fa-star"></i> |414 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21936198/2023/2/23/c5bd261e-b2b9-4996-8736-7fd5d909dc5b1677135088695-Louis-Philippe-Sport-Men-Tshirts-5851677135088136-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Louis Philippe Sport</strong>
+                        <p>Polo Collar Slim</p>
+                        <strong>Rs.1049</strong><del>Rs.1499</del><span>(30% OFF)</span>
+                    </div>
+                    <!-- eleventh product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21807586/2023/4/25/a0a82b33-1074-4de8-8476-03933c1c48861682404332113-NEXT-Melange-Effect-T-shirt-9671682404331867-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>NEXT</strong>
+                        <p>Melange Effect T-shirt</p>
+                        <strong>Rs.979</strong><del>Rs.1399</del><span class="orange">(30% OFF)</span>
+                    </div>
+                    <!-- tweleve product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4 <i class="fa-solid fa-star"></i> |19.7k </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Heutrap</strong>
+                        <p>Typography Print T-shirt</p>
+                        <strong>Rs.340</strong><del>Rs.1099</del><span>(69% OFF)</span>
+                    </div>
+                    <!-- thirteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.2 <i class="fa-solid fa-star"></i> |4.4k </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/1996770/2018/2/8/11518088823846-Roadster-Men-Rust-Solid-Henley-Neck-T-shirt-7631518088823602-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Roadster</strong>
+                        <p>Henley Neck T-shirt</p>
+                        <strong>Rs.249</strong><del>Rs.499</del><span>(50% OFF)</span>
+                    </div>
+                    <!-- fourteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.3 <i class="fa-solid fa-star"></i> |10.8k
+                        </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2314400/2022/2/28/94412956-cdc5-46e6-ae24-ddf43753bb861646042819162-HRX-by-Hrithik-Roshan-Men-Navy-Advanced-Rapid-Dry-T-shirt-42-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>HRX by Hrithik Roshan</strong>
+                        <p>Rapid Dry T-shirt</p>
+                        <strong>Rs.269</strong><del>Rs.899</del><span>(70% OFF)</span>
+                    </div>
+                    <!-- fifteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.4 <i class="fa-solid fa-star"></i> |196 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15474858/2021/10/11/018afb15-62db-43c7-b1cb-1e2aae12a6a61633955832542-US-Polo-Assn-Men-Pack-Of-2-Navy-Blue-Brand-Logo-Embroidered--1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>U.S.Polo Assn.</strong>
+                        <p>Men Pack Of 2 Lounge T-shirts</p>
+                        <strong>Rs.576</strong><del>Rs.1049</del><span>(45% OFF)</span>
+                    </div>
+                    <!-- sixteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/22733540/2023/4/11/5500f5db-8f3c-442f-acb4-ae9f66e2459e1681231606144MenGreenSolidPoloNeckT-shirt1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Allen Solly</strong>
+                        <p>Printed Pure Cotton T-shirt</p>
+                        <strong>Rs.1421</strong><del>Rs.1799</del><span class="orange">(21% OFF)</span>
+                    </div>
+                    <!-- seventeenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.2 <i class="fa-solid fa-star"></i> |4.5k </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/11545192/2022/3/25/626b0419-cbb0-4200-8490-67e20a0021c51648208612203-Roadster-Men-Green--White-Printed-Round-Neck-Pure-Cotton-T-s-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Roadster</strong>
+                        <p>Printed Round Neck Pure</p>
+                        <strong></strong><del></del><span></span>
+                    </div>
+                    <!-- eighteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.3 <i class="fa-solid fa-star"></i> |1.2k </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17605700/2023/2/17/90bf4f54-5da2-44ab-aadb-97de558ce0041676633122557-Difference-of-Opinion-Men-Blue-Conversational-Printed-Pure-C-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Difference of Opinion</strong>
+                        <p>Cotton Oversized T-shirt</p>
+                        <strong>Rs.363</strong><del>Rs.1299</del><span>(72% OFF)</span>
+                    </div>
+                    <!-- ninteenth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4.3 <i class="fa-solid fa-star"></i> |51 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21467460/2023/2/15/19fe1173-3ca6-48a4-9156-a6e3fd1de5d11676461988232-Jordan-Dri-FIT-23-Alpha-2171676461987790-4.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Nike</strong>
+                        <p>NFS 23 Alpha S/L DF T-shirt</p>
+                        <strong>Rs.1097</strong><del>Rs.1995</del><span>(45% OFF)</span>
+                    </div>
+                    <!-- twentieth product  -->
+                    <div class="product-showing-div-slide">
+                        <div class="product-rating-within-product-img">4 <i class="fa-solid fa-star"></i> |6.3 </div>
+                        <div class="product-img">
+                            <img
+                                src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2498517/2018/5/11/d485cf97-7835-446f-b637-a98ac6fe2a291526023388617-Roadster-Men-Olive-Green-Solid-Round-Neck-T-shirt-4761526023388386-1.jpg" />
+                        </div>
+                        <div class="wishList"> Wishlist <i class="fa-regular fa-heart"></i></div>
+                        <strong>Roadster</strong>
+                        <p>Time Travlr Sleveless Pure Cot...</p>
+                        <strong>Rs.124</strong><del>Rs.499</del><span>(75% OFF)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', onload)
+    
+    
+    function onload(){
+        let productDivs = document.querySelectorAll('.product-showing-div-slide');
+
+        productDivs.forEach((productDiv) => {
+            let rating = productDiv.querySelector('.product-rating-within-product-img');
+            let image = productDiv.querySelector('.product-img');
+            let wishList = productDiv.querySelector('.wishList');
+
+            // event listeners
+            productDiv.addEventListener('mouseover', showWishlist);
+            productDiv.addEventListener('mouseout', hideWishlist);
+
+            function showWishlist() {
+                image.style.height = '280px';
+                if (rating) {
+                    rating.style.display = 'none';
+                }
+                wishList.style.display = 'block';
+            }
+
+            function hideWishlist() {
+                image.style.height = '310px';
+                if (rating) {
+                    rating.style.display = 'flex';
+                }
+                wishList.style.display = 'none';
+            }
+        });
+    };
+</script>
+
+
+</html>

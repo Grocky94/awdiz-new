@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+        integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myntra-profile</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #window {
+            width: 100%;
+        }
+
+        #navBar {
+            height: 100px;
+            width: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+            justify-content: space-around;
+            background-color: #ffffff;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+
+        #leftInnerDiv {
+            height: 100px;
+            width: 50%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            height: 80px;
+            width: 15%;
+            /* border: 1px solid black; */
+            padding: 10px;
+            display: flex;
+            align-items: center;
+
+        }
+
+        #logo>img {
+            height: 100%;
+            width: 100%;
+            padding: 5px;
+            /* border: 1px solid black; */
+
+        }
+
+        #cat {
+            height: 80px;
+            width: 80%;
+            /* border: 1px solid black; */
+            padding: 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: stretch;
+        }
+
+        .catList {
+            height: 60px;
+            width: 80px;
+            /* border: 1px solid black; */
+            padding: 5px;
+            font-size: small;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: center;
+
+
+        }
+
+        #rightInnerDiv {
+            height: 100px;
+            width: 55%;
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+        }
+
+        #rightInput {
+            height: 60px;
+            width: 60%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+
+        #rightInput>div {
+            height: 30px;
+            width: 100%;
+            /* border: 1px solid black; */
+            background-color: #f5f5f6;
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+
+        }
+
+        #rightInput>div>input {
+            width: 90%;
+            border: none;
+            background-color: #f5f5f6;
+        }
+
+
+        #rightIcon {
+            height: 60px;
+            width: 35%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .icon {
+            height: 60px;
+            width: 25%;
+            /* border: 1px solid black; */
+            padding: 5px;
+            text-align: center;
+        }
+
+        .icon>i {
+            margin-top: 10px;
+        }
+
+        #screen {
+            width: 70%;
+            /* border: 1px solid black; */
+            margin: auto;
+            margin-top: 12%;
+        }
+
+
+        #heading {
+            height: 40px;
+            width: 100%;
+            border-bottom: 1px solid rgb(176, 173, 173);
+            margin-top: 4%;
+
+        }
+
+        #heading>p:nth-child(1) {
+            margin-top: 4%;
+        }
+
+        #heading>p:nth-child(2) {
+            opacity: 0.7;
+
+        }
+
+        #details-parent-div {
+            width: 100%;
+            /* border: 1px solid black; */
+            display: flex;
+        }
+
+        #left-side {
+            width: 20%;
+            border-right: 1px solid rgb(176, 173, 173);
+            display: flex;
+            flex-direction: column;
+            /* align-items: center; */
+        }
+
+        #left-side>div>p {
+            margin-top: 4%;
+        }
+
+        #left-side>div>h5 {
+            opacity: 0.7;
+        }
+
+        #left-side>div {
+            padding-top: 10%;
+            padding-bottom: 10%;
+            width: 90%;
+            border-bottom: 1px solid rgb(176, 173, 173);
+            margin-left: 0px;
+            margin-right: auto;
+        }
+
+        #left-side>div:nth-child(1) {
+            height: 80px;
+            width: 90%;
+            border-bottom: 1px solid rgb(176, 173, 173);
+        }
+
+        #left-side>div:nth-child(5) {
+            border: none;
+        }
+
+        #left-side>div:nth-child(1)>h5 {
+            margin-top: 5%;
+        }
+
+        #left-side>div:nth-child(4)>p:nth-child(2) {
+            color: #20BD99;
+            font-weight: 700;
+        }
+
+        #right-side {
+            /* height:500px; */
+            width: 78%;
+            margin: 1%;
+            border: 1px solid rgb(176, 173, 173);
+        }
+
+        #right-side>div:nth-child(1) {
+            height: 100px;
+            width: 70%;
+            border-bottom: 1px solid rgb(176, 173, 173);
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        #right-side>div:nth-child(2) {
+            height: 400px;
+            width: 70%;
+            /* border: 1px solid black; */
+            margin: auto;
+        }
+
+        .detail-index {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2%;
+        }
+
+        .detail-index>span:nth-child(1) {
+            margin-left: 5%;
+        }
+
+        .detail-index>span:nth-child(2) {
+            margin-right: 20%;
+        }
+
+        #edit-btn {
+            height: 50px;
+            width: 90%;
+            border: 1px solid #ff3f6c;
+            background-color: #ff3f6c;
+            color: white;
+            font-weight: 700;
+            margin-top: 5%;
+            margin-left: 2%;
+        }
+
+        #footer-parent-div {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 100%;
+            margin-top: 5%;
+        }
+
+        #inner-align-div {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 80%;
+            margin: auto;
+        }
+
+        #inside-of-inner-align-div {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 100%;
+            display: flex;
+        }
+
+        #Online-Useful {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 20%;
+        }
+
+        #shopping {
+            /* border: 1px solid black; */
+            height: 250px;
+            width: 100%;
+            line-height: 15px;
+        }
+
+        .anchor {
+            text-decoration: none;
+            color: black;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .anchor-grey {
+            text-decoration: none;
+            color: grey;
+            font-size: 14px;
+
+        }
+
+        #cus-pro {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 20%;
+        }
+
+        #exp-mob {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 30%;
+        }
+
+        #play-image-div {
+            display: flex;
+        }
+
+        .play-img {
+            width: 120px;
+        }
+
+        .apple-app-img {
+            width: 110px;
+        }
+
+        #accredation {
+            /* border: 1px solid black; */
+            height: 500px;
+            width: 30%;
+        }
+
+        .fa-square-facebook,
+        .fa-twitter,
+        .fa-youtube,
+        .fa-instagram {
+            color: grey;
+        }
+
+        .fa-twitter,
+        .fa-youtube,
+        .fa-instagram {
+            margin-left: 10px;
+        }
+
+        #original {
+            /* border: 1px solid black; */
+            height: 60px;
+            width: 100%;
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .accreddation-pic {
+            width: 50px;
+        }
+
+        .accreddation-text {
+            margin-left: 5px;
+            margin-top: 0px;
+        }
+
+        #popular-search {
+            /* border: 1px solid black; */
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="window">
+        <div id="navBar">
+            <div id="leftInnerDiv">
+                <div id="logo">
+                    <img src="https://images.indianexpress.com/2021/01/myntra.png"></img>
+                </div>
+                <div id="cat">
+                    <div class="catList">MEN</div>
+                    <div class="catList">WOMEN</div>
+                    <div class="catList">KIDS</div>
+                    <div class="catList">HOME & LIVING</div>
+                    <div class="catList">BEAUTY</div>
+                    <div class="catList">STUDIO<sub>NEW</sub></div>
+                </div>
+            </div>
+            <div id="rightInnerDiv">
+                <div id="rightInput">
+                    <div><i class="fa-solid fa-magnifying-glass"></i><input
+                            placeholder="Search for product, brands and more" /></div>
+                </div>
+                <div id="rightIcon">
+                    <div class="icon">
+                        <i class="fa-regular fa-user"></i>
+                        <p>Profile</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-regular fa-heart"></i>
+                        <p>Wishlist</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <p>Bag</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="screen">
+            <div id="heading">
+                <p><b>Account</b></p>
+                <p>Rocky Joseph Gomes</p>
+            </div>
+            <div id="details-parent-div">
+                <div id="left-side">
+                    <!-- first conpartment  -->
+                    <div>
+                        <h5>Overview</h5>
+                    </div>
+                    <!-- second comparment  -->
+                    <div>
+                        <h5>ORDERS</h5>
+                        <p>Order & Returns</p>
+                    </div>
+                    <!-- third compartment  -->
+                    <div>
+                        <h5>CREDITS</h5>
+                        <p>Coupons</p>
+                        <p>Myntra Credit</p>
+                        <p>MynCash</p>
+                    </div>
+                    <!-- fourth compartment  -->
+                    <div>
+                        <h5>ACCOUNT</h5>
+                        <p>Profile</p>
+                        <p>Saved Cards</p>
+                        <p>Saved VPA</p>
+                        <p>Addresses</p>
+                        <p>Myntra Insider</p>
+                    </div>
+                    <!-- fifth compartment  -->
+                    <div>
+                        <h5>LEGAL</h5>
+                        <p>Terms of Use</p>
+                        <p>Privacy Policy</p>
+                    </div>
+                </div>
+                <div id="right-side">
+                    <div>
+                        <h3>Profile Details</h3>
+                    </div>
+                    <div>
+                        <div class="detail-index"><span>Full Name</span><span>Rocky Joseph Gomes</span></div>
+                        <div class="detail-index"><span>Mobile Number</span><span>0123456789</span></div>
+                        <div class="detail-index"><span>Email ID</span><span>-not added-</span></div>
+                        <div class="detail-index"><span>Gender</span><span>MALE</span></div>
+                        <div class="detail-index"><span>Date of Birth</span><span>-not added-</span></div>
+                        <div class="detail-index"><span>Location</span><span>-not added-</span></div>
+                        <div class="detail-index"><span>Alternate Mobile</span><span>-not added-</span></div>
+                        <div class="detail-index"><span>Hint Name</span><span>-not added-</span></div>
+                        <button id="edit-btn">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer-parent-div">
+            <div id="inner-align-div">
+                <div id="inside-of-inner-align-div">
+                    <div id="Online-Useful">
+                        <div id="shopping">
+                            <h4><a class="anchor" href="#">ONLINE SHOPING</a></h4>
+                            <p><a class="anchor-grey" href="#">Men</a></p>
+                            <p><a class="anchor-grey" href="#">Women</a></p>
+                            <p><a class="anchor-grey" href="#">Kids</a></p>
+                            <p><a class="anchor-grey" href="#">Home & Living</a></p>
+                            <p><a class="anchor-grey" href="#">Beauty</a></p>
+                            <p><a class="anchor-grey" href="#">Gift Card</a></p>
+                            <p><a class="anchor-grey" href="#">Myntra Insider</a></p>
+                        </div>
+                        <div id="link">
+                            <h4><a class="anchor" href="#">USEFUL LINKS</a></h4>
+                            <p><a class="anchor-grey" href="#">Blog</a></p>
+                            <p><a class="anchor-grey" href="#">Careers</a></p>
+                            <p><a class="anchor-grey" href="#">Site Map</a></p>
+                            <p><a class="anchor-grey" href="#">Corporate Information</a></p>
+                            <p><a class="anchor-grey" href="#">Whitehat</a></p>
+                        </div>
+                    </div>
+                    <div id="cus-pro">
+                        <h4><a class="anchor" href="#">CUSTOMER POLICIES</a></h4>
+                        <p><a class="anchor-grey" href="#">Contact Us</a></p>
+                        <p><a class="anchor-grey" href="#">FAQ</a></p>
+                        <p><a class="anchor-grey" href="#">T&C</a></p>
+                        <p><a class="anchor-grey" href="#">Terms of Use</a></p>
+                        <p><a class="anchor-grey" href="#">Shipping</a></p>
+                        <p><a class="anchor-grey" href="#">Cancellation</a></p>
+                        <p><a class="anchor-grey" href="#">Returns</a></p>
+                        <p><a class="anchor-grey" href="#">Privacy Policy</a></p>
+                        <p><a class="anchor-grey" href="#">Grievance Officer</a></p>
+
+                    </div>
+                    <div id="exp-mob">
+                        <h4><a class="anchor" href="#">EXPERIENCE MYNTRA APP ON MOBILE</a></h4>
+                        <div id="play-image-div">
+                            <img class="play-img"
+                                src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" />
+                            <img class="apple-app-img"
+                                src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" />
+                        </div>
+                        <h4><a class="anchor" href="#">KEEP IN TOUCH</a></h4>
+                        <div>
+                            <a href="#"><i class="fa-brands fa-square-facebook fa-xl"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter fa-xl"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube fa-xl"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                        </div>
+                    </div>
+                    <div id="accredation">
+                        <div id="original">
+                            <img class="accreddation-pic"
+                                src="https://constant.myntassets.com/web/assets/img/6c3306ca-1efa-4a27-8769-3b69d16948741574602902452-original.png" />
+                            <div>
+                                <p class="accreddation-text"><strong>100% ORIGINAL</strong> guarantee for<br />all
+                                    products
+                                    at myntra.com</p>
+                            </div>
+                        </div>
+                        <div id="original">
+                            <img class="accreddation-pic"
+                                src="https://constant.myntassets.com/web/assets/img/ef05d6ec-950a-4d01-bbfa-e8e5af80ffe31574602902427-30days.png" />
+                            <div>
+                                <p class="accreddation-text"><strong>Return within 30days</strong> of<br /> receiving
+                                    your
+                                    order</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

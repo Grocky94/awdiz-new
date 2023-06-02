@@ -24,8 +24,9 @@
             height: 50vh;
             width: 100%;
         }
-        .showcase>img{
-            height:100%;
+
+        .showcase>img {
+            height: 100%;
             width: 100%;
         }
 
@@ -124,19 +125,25 @@
 
         function showSlides(n) {
             let i;
+            var current = 0;
             let slides = document.getElementsByClassName("showcase image");
             let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 };
-            if (n < 1) { slideIndex = slides.length }
+            if (n < 1) { slideIndex = slides.length };
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
+            slideIndex++
+            if (n > slides.length) { slideIndex = 1 };
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
+
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
+
+            setInterval(showSlides, 2000);
         }
+
     </script>
 </body>
 
