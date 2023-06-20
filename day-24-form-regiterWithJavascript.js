@@ -25,10 +25,21 @@ function register(event) {
     localStorage.setItem("studentList", JSON.stringify(details));
 
 }
-var dataFromLS = JSON.parse(localStorage.getItem("studentList", "details"));
-console.log(dataFromLS);
+function showcase(event){
+    event.preventDefault();
+    var dataFromLS = JSON.parse(localStorage.getItem("studentList"));
+    console.log(dataFromLS);
+    // console.log()
+}
+
+var object = {
+    student : "rocky",
+    age : 21,
+
+}
 
 
+// console.log(student, secondStudent, thirdStudent);
 // var dataFromLS = JSON.parse(localStorage.getItem("StudentsList"));
 // localStorage.setItem("stundets", "[ 1,2,4,5]");
 // localStorage.removeItem("stundets")

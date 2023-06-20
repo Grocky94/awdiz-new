@@ -13,25 +13,36 @@
             width: 35%;
             border: 1px solid black;
             margin: auto;
-            
+
         }
-        body >h1 {
+
+        body>h1 {
             text-align: center;
         }
-        form>label{
+
+        form>label {
             margin-left: 1%;
         }
-        form>input{
-            width:95%;
+
+        form>input {
+            width: 95%;
             margin-bottom: 1%;
             margin-left: 1%;
         }
 
-        input[type = submit]{
+        input[type=submit] {
             height: 5vh;
-            width:95%;
+            width: 95%;
             background-color: rgb(92, 92, 186);
         }
+        #btn{
+            height:5vh;
+            width:35%;
+            margin-top: 2%;
+            margin-left: 32.5%;
+            margin-right: auto;
+        }
+
     </style>
 </head>
 
@@ -39,16 +50,17 @@
     <h1>Awdiz Student</h1>
     <form onsubmit="register(event)">
         <label>Name</label><br />
-        <input type="text" id="userName"/><br />
+        <input type="text" id="userName" /><br />
         <label>Number</label><br />
-        <input type="number" id="userNumber"/><br />
+        <input type="number" id="userNumber" /><br />
         <label>Email</label><br />
-        <input type="email" id="userEmail"/><br />
+        <input type="email" id="userEmail" /><br />
         <label>Password</label><br />
-        <input type="Password" id="userPassword"/><br />
-        <input type="submit" value="Register"/><br />
+        <input type="Password" id="userPassword" /><br />
+        <input type="submit" value="Register" /><br />
     </form>
-<button></button>
+    <button onclick="showcase(event)" id="btn">console log</button>
 </body>
 
 </html>
+
